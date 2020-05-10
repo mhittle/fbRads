@@ -11,7 +11,7 @@ fbad_create_campaign(fbacc, buying_type = c("AUCTION", "FIXED_CPM",
   "EVENT_RESPONSES", "EXTERNAL", "LEAD_GENERATION", "LINK_CLICKS",
   "LOCAL_AWARENESS", "MOBILE_APP_ENGAGEMENT", "MOBILE_APP_INSTALLS",
   "OFFER_CLAIMS", "PAGE_LIKES", "POST_ENGAGEMENT", "PRODUCT_CATALOG_SALES",
-  "VIDEO_VIEWS"), spend_cap = NULL,special_ad_category="NONE")
+  "VIDEO_VIEWS"), spend_cap = NULL,special_ad_category="NONE",special_ad_categories="[]")
 }
 \arguments{
 \item{fbacc}{(optional) \code{FB_Ad_account} object, which defaults to the last returned object of \code{\link{fbad_init}}.}
@@ -29,6 +29,7 @@ fbad_create_campaign(fbacc, buying_type = c("AUCTION", "FIXED_CPM",
 \item{spend_cap}{spend cap of the campaign}
 
 \item{special_ad_category}{defaults to none}
+\item{special_ad_categories}{defaults to none}
 }
 \value{
 Ad Campaign id
