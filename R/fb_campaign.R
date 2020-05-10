@@ -49,6 +49,7 @@ fbad_create_campaign <- function(fbacc, buying_type = c('AUCTION', 'FIXED_CPM', 
                         method = "POST",
                         params = params)
 
+    print(res)
     ## return Ad Campaign ID on success
     fromJSONish(res)$id
 
