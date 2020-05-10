@@ -20,7 +20,7 @@ fbad_create_campaign <- function(fbacc, buying_type = c('AUCTION', 'FIXED_CPM', 
                                      'MOBILE_APP_ENGAGEMENT', 'MOBILE_APP_INSTALLS',
                                      'OFFER_CLAIMS', 'PAGE_LIKES', 'POST_ENGAGEMENT',
                                      'PRODUCT_CATALOG_SALES', 'VIDEO_VIEWS'),
-                                 spend_cap = NULL, special_ad_category='NONE',special_ad_categories="[]") {
+                                 spend_cap = NULL, special_ad_category,special_ad_categories) {
 
     fbacc <- fbad_check_fbacc()
     if (missing(name))
