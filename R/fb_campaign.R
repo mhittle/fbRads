@@ -38,9 +38,9 @@ fbad_create_campaign <- function(fbacc, buying_type = c('AUCTION', 'FIXED_CPM', 
         execution_options = execution_options,
         spend_cap         = spend_cap,
         objective         = match.arg(objective),
-        campaign_status   = match.arg(campaign_status)),
+        campaign_status   = match.arg(campaign_status),
         special_ad_category = special_ad_category,
-        special_ad_categories = special_ad_categories
+        special_ad_categories = special_ad_categories)
 
     ## drop NULL args
     params <- as.list(unlist(params, recursive = FALSE))
