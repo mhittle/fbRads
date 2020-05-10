@@ -7,6 +7,8 @@
 #' @param objective the campaign's objective
 #' @param spend_cap spend cap of the campaign
 #' @return Ad Campaign id
+#' @param special_ad_category special ad category
+#' @param special_ad_categories special ad categories
 #' @export
 #' @references \url{https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group#Creating}
 fbad_create_campaign <- function(fbacc, buying_type = c('AUCTION', 'FIXED_CPM', 'RESERVED'),
@@ -42,7 +44,8 @@ fbad_create_campaign <- function(fbacc, buying_type = c('AUCTION', 'FIXED_CPM', 
 
     ## drop NULL args
     params <- as.list(unlist(params, recursive = FALSE))
-
+    print(params)
+  
     ## get results
     res <- fbad_request(fbacc,
                         path   = paste0('act_', fbacc$account_id, '/campaigns'),
