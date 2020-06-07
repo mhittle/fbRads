@@ -183,10 +183,11 @@ fbad_request <- function(fbacc, path, method = c('GET', 'POST', 'DELETE'), param
             flog.info(paste('Retrying query for the', retries + 1, ' st/nd/rd time'), name = 'fbRads')
 
             ## give some chance for the system/network to recover
-            Sys.sleep(2)
+            sleepDuration=retries*3
+            Sys.sleep(sleepDuration)
 
             ## retry the query for no more than 3 times
-            if (retries < 3) {
+            if (retries < 30) {
                 mc$retries <- retries + 1
                 return(eval(mc, envir = parent.frame()))
             }
@@ -234,10 +235,11 @@ fbad_request <- function(fbacc, path, method = c('GET', 'POST', 'DELETE'), param
         if (headers$status %in% c('502', '503', '504')) {
 
             ## give some chance for the system/network to recover
-            Sys.sleep(2)
+            sleepDuration=retries*3
+            Sys.sleep(sleepDuration)
 
             ## retry the query for no more than 3 times
-            if (retries < 3) {
+            if (retries < 30) {
                 flog.info(paste('Retrying query for the', retries + 1, ' st/nd/rd time'), name = 'fbRads')
                 mc$retries <- retries + 1
                 return(eval(mc, envir = parent.frame()))
@@ -265,10 +267,11 @@ fbad_request <- function(fbacc, path, method = c('GET', 'POST', 'DELETE'), param
                        name = 'fbRads')
 
             ## give some chance for the system/network to recover
-            Sys.sleep(2)
+           sleepDuration=retries*3
+           Sys.sleep(sleepDuration)
 
             ## retry the query for no more than 3 times
-            if (retries < 3) {
+            if (retries < 30) {
                 flog.info(paste('Retrying query for the', retries + 1, ' st/nd/rd time'), name = 'fbRads')
                 mc$retries <- retries + 1
                 return(eval(mc, envir = parent.frame()))
